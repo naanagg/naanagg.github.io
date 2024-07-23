@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x2 Iframe Grid with Input</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            width: 90%;
+            height: 90vh;
+        }
+        .iframe-wrapper {
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 80%;
+            border: none;
+        }
+        .input-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            border: 1px solid #ccc;
+            background-color: #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="iframe-wrapper">
+            <iframe id="iframe1"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url1">
+                <button onclick="loadIframe('iframe1', 'url1')">Load</button>
+            </div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="iframe2"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url2">
+                <button onclick="loadIframe('iframe2', 'url2')">Load</button>
+            </div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="iframe3"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url3">
+                <button onclick="loadIframe('iframe3', 'url3')">Load</button>
+            </div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="iframe4"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url4">
+                <button onclick="loadIframe('iframe4', 'url4')">Load</button>
+            </div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="iframe5"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url5">
+                <button onclick="loadIframe('iframe5', 'url5')">Load</button>
+            </div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="iframe6"></iframe>
+            <div class="input-container">
+                <input type="text" placeholder="Enter URL" id="url6">
+                <button onclick="loadIframe('iframe6', 'url6')">Load</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadIframe(iframeId, inputId) {
+            const url = document.getElementById(inputId).value;
+            if (url) {
+                document.getElementById(iframeId).src = url;
+            }
+        }
+    </script>
+</body>
+</html>
